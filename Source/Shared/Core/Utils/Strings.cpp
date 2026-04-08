@@ -14,6 +14,10 @@
 #include <string>
 #include <cassert>
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 std::string BytesToHex(const std::vector<uint8_t>& Bytes)
 {
     std::stringstream ss;

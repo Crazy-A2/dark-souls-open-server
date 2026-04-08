@@ -189,11 +189,9 @@ extern "C" {
 #undef BN_LLONG
 /* Only one for the following should be defined */
 #undef SIXTY_FOUR_BIT_LONG
-#define SIXTY_FOUR_BIT_LONG 0
+#define SIXTY_FOUR_BIT_LONG
 #undef SIXTY_FOUR_BIT
-#define SIXTY_FOUR_BIT 1
 #undef THIRTY_TWO_BIT
-#define THIRTY_TWO_BIT 0
 #endif
 
 #define RC4_INT unsigned int

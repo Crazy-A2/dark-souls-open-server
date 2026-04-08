@@ -15,6 +15,8 @@
 #include "Shared/Core/Utils/Rtti.h"
 #include "Shared/Core/Utils/Protobuf.h"
 #include "Shared/Core/Utils/File.h"
+
+#include <Windows.h>
 #include "ThirdParty/detours/src/detours.h"
 
 #include <vector>

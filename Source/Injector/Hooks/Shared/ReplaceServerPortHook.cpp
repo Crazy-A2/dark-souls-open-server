@@ -11,11 +11,13 @@
 #include "Injector/Injector/Injector.h"
 #include "Shared/Core/Utils/Logging.h"
 #include "Shared/Core/Utils/Strings.h"
+
+#include <WinSock2.h>
+#include <Windows.h>
 #include "ThirdParty/detours/src/detours.h"
 
 #include <vector>
 #include <iterator>
-#include <WinSock2.h>
 
 namespace 
 {
