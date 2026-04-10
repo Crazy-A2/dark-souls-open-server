@@ -7,6 +7,7 @@ set_project("ds3os")
 set_version("1.0.0")
 add_rules("mode.debug", "mode.release")
 set_languages("c++17")
+add_plugindirs("plugins")
 
 option("bundled_openssl")
     set_default(false)
@@ -68,51 +69,12 @@ local function output_dir()
     return path.join(os.projectdir(), "bin", current_arch() .. "_" .. current_mode())
 end
 
-local function run_command(command_fmt, ...)
-    if os.exec then
-        return os.exec(command_fmt, ...)
-    end
-
-    local command = string.format(command_fmt, ...)
-    if os.vrun then
-        return os.vrun(command)
-    end
-    if os.run then
-        return os.run(command)
-    end
-    if os.iorun then
-        return os.iorun(command)
-    end
-
-    print("ERROR: No supported command execution API found: " .. command)
-    return false
-end
-
 local function ensure_output_dir()
-    local dir = output_dir()
-    if os.mkdir then
-        os.mkdir(dir)
-    else
-        if is_windows_plat() then
-            run_command("mkdir \"%s\"", dir)
-        else
-            run_command("mkdir -p \"%s\"", dir)
-        end
-    end
+    os.mkdir(output_dir())
 end
 
 local function copy_path(src, dst)
-    if os.vcp then
-        os.vcp(src, dst)
-    elseif os.cp then
-        os.cp(src, dst)
-    else
-        if is_windows_plat() then
-            run_command("xcopy /E /I /Y \"%s\" \"%s\"", src, dst)
-        else
-            run_command("cp -rf \"%s\" \"%s\"", src, dst)
-        end
-    end
+    os.cp(src, dst)
 end
 
 local function ensure_openssl_generated_headers()
@@ -201,19 +163,6 @@ local function copy_steam_runtime(target)
     if os.isfile(source) then
         copy_path(source, target:targetdir())
     end
-end
-
-local function xmake_cli_args()
-    return string.format("--plat=%s --arch=%s --mode=%s", current_plat(), current_arch(), current_mode())
-end
-
-local function build_loader_command()
-    local configuration = current_mode() == "debug" and "Debug" or "Release"
-    return string.format(
-        "dotnet build Source/Loader/Loader.csproj -c %s -o \"%s\"",
-        configuration,
-        output_dir()
-    )
 end
 
 -- ================================================================================================
@@ -578,82 +527,3 @@ if is_windows_plat() then
         add_includedirs("Source/Injector", "Source", {public = true})
         add_deps("Shared", "detours")
 end
-
--- ================================================================================================
--- Tasks
--- ================================================================================================
-
-task("install-all")
-    set_menu {
-        usage = "xmake install-all",
-        description = "Copy runtime assets to the configured output directory"
-    }
-    on_run(function ()
-        ensure_output_dir()
-        if os.isdir("Source/WebUI") then
-            copy_path("Source/WebUI", output_dir())
-        end
-        local runtime = is_windows_plat()
-            and "Source/ThirdParty/steam/redistributable_bin/win64/steam_api64.dll"
-            or "Source/ThirdParty/steam/redistributable_bin/linux64/libsteam_api.so"
-        if os.isfile(runtime) then
-            copy_path(runtime, output_dir())
-        end
-        print("Installed runtime assets to: %s", output_dir())
-    end)
-
-task("clean-all")
-    set_menu {
-        usage = "xmake clean-all",
-        description = "Remove xmake metadata and built binaries"
-    }
-    on_run(function ()
-        os.rm(path.join(os.projectdir(), "bin"))
-        os.rm(path.join(os.projectdir(), ".xmake"))
-        print("Clean complete.")
-    end)
-
-task("build-loader")
-    set_menu {
-        usage = "xmake build-loader",
-        description = "Build the Windows x64 Loader via dotnet"
-    }
-    on_run(function ()
-        if not is_windows_plat() then
-            print("Loader is only supported on Windows.")
-            return
-        end
-        if current_arch() ~= "x64" then
-            print("Loader only supports x64.")
-            return
-        end
-        run_command(build_loader_command())
-        print("Loader build complete: %s", output_dir())
-    end)
-
-task("build-all")
-    set_menu {
-        usage = "xmake build-all",
-        description = "Build the native targets for the current configuration"
-    }
-    on_run(function ()
-        run_command("xmake %s build Server", xmake_cli_args())
-        if is_windows_plat() then
-            run_command("xmake %s build Injector", xmake_cli_args())
-            if current_arch() == "x64" then
-                run_command(build_loader_command())
-            else
-                print("Skipping Loader: only available for Windows x64.")
-            end
-        end
-        if os.isdir("Source/WebUI") then
-            copy_path("Source/WebUI", output_dir())
-        end
-        local runtime = is_windows_plat()
-            and "Source/ThirdParty/steam/redistributable_bin/win64/steam_api64.dll"
-            or "Source/ThirdParty/steam/redistributable_bin/linux64/libsteam_api.so"
-        if os.isfile(runtime) then
-            copy_path(runtime, output_dir())
-        end
-        print("Build complete: %s", output_dir())
-    end)
