@@ -502,12 +502,6 @@ target("Server")
     add_headerfiles("Source/Server/**/*.h")
     add_includedirs("Source/Server", "Source", {public = true})
     add_deps("DarkSouls3", "DarkSouls2", "Shared", "civetweb", "libprotobuf-lite", "sqlite", "steam", "libcurl")
-    after_build(function (target)
-        if os.isdir("Source/WebUI") then
-            copy_path("Source/WebUI", target:targetdir())
-        end
-        copy_steam_runtime(target)
-    end)
 
 if is_windows_plat() then
     target("Injector")

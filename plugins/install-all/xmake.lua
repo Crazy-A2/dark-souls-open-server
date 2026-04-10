@@ -1,32 +1,11 @@
 task("install-all")
     set_category("plugin")
     on_run(function ()
-        import("core.project.config")
+        local helpers = import("common.build_helpers", {rootdir = path.join(os.projectdir(), "plugins")})
 
-        config.load()
-
-        local plat = config.plat() or (is_host("windows") and "windows" or "linux")
-        local arch = config.arch() or "x64"
-        local mode = config.mode() or "release"
-        if arch == "x86_64" then
-            arch = "x64"
-        elseif arch == "i386" then
-            arch = "x86"
-        end
-
-        local outputdir = path.join(os.projectdir(), "bin", arch .. "_" .. mode)
-        os.mkdir(outputdir)
-
-        if os.isdir("Source/WebUI") then
-            os.cp("Source/WebUI", outputdir)
-        end
-
-        local runtime = plat == "windows"
-            and "Source/ThirdParty/steam/redistributable_bin/win64/steam_api64.dll"
-            or "Source/ThirdParty/steam/redistributable_bin/linux64/libsteam_api.so"
-        if os.isfile(runtime) then
-            os.cp(runtime, outputdir)
-        end
+        local ctx = helpers.load_context()
+        local outputdir = helpers.ensure_outputdir(helpers.outputdir(ctx.arch, ctx.mode))
+        helpers.copy_runtime_assets(ctx.plat, outputdir)
 
         print("Installed runtime assets to: %s", outputdir)
     end)
