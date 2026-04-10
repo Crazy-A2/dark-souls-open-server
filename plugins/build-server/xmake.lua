@@ -18,6 +18,6 @@ task("build-server")
     end)
     set_menu {
         usage = "xmake build-server [options]",
-        description = "Build the Server target and copy runtime assets and lib dynamic libraries"
+        description = "Build the Server target and copy runtime assets and lib dynamic libraries",
         options = {}
     }
