@@ -1,4 +1,6 @@
 ﻿
+using Loader.Properties;
+
 namespace Loader.Forms
 {
     partial class ServerLoginDetailsDialog
@@ -54,7 +56,7 @@ namespace Loader.Forms
         label2.Name = "label2";
         label2.Size = new System.Drawing.Size(390, 75);
         label2.TabIndex = 2;
-        label2.Text = "Your server has been created and will show up in the server list shortly.\r\n\r\nYou can configure your server at the following url using the login below. \r\n\r\nPlease make sure you save the login! ";
+        label2.Text = Resources.ServerLoginDetails_Description;
         // 
         // submitButton
         // 
@@ -62,7 +64,7 @@ namespace Loader.Forms
         submitButton.Name = "submitButton";
         submitButton.Size = new System.Drawing.Size(139, 28);
         submitButton.TabIndex = 3;
-        submitButton.Text = "OK";
+        submitButton.Text = Resources.ServerLoginDetails_OKButton;
         submitButton.UseVisualStyleBackColor = true;
         submitButton.Click += submitButton_Click;
         // 
@@ -73,7 +75,7 @@ namespace Loader.Forms
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(60, 15);
         label1.TabIndex = 4;
-        label1.Text = "Username";
+        label1.Text = Resources.ServerLoginDetails_UsernameLabel;
         // 
         // label3
         // 
@@ -82,7 +84,7 @@ namespace Loader.Forms
         label3.Name = "label3";
         label3.Size = new System.Drawing.Size(57, 15);
         label3.TabIndex = 6;
-        label3.Text = "Password";
+        label3.Text = Resources.ServerLoginDetails_PasswordLabel;
         // 
         // passwordTextBox
         // 
@@ -123,7 +125,7 @@ namespace Loader.Forms
         ShowIcon = false;
         ShowInTaskbar = false;
         StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-        Text = "Create Server";
+        Text = Resources.ServerLoginDetails_WindowTitle;
         ResumeLayout(false);
         PerformLayout();
         }

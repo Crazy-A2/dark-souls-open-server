@@ -355,5 +355,25 @@ namespace Loader.Properties {
         internal static string CreateServer_Description {
             get { return ResourceManager.GetString("CreateServer_Description", resourceCulture); }
         }
+
+        internal static string ServerLoginDetails_WindowTitle {
+            get { return ResourceManager.GetString("ServerLoginDetails_WindowTitle", resourceCulture); }
+        }
+
+        internal static string ServerLoginDetails_OKButton {
+            get { return ResourceManager.GetString("ServerLoginDetails_OKButton", resourceCulture); }
+        }
+
+        internal static string ServerLoginDetails_UsernameLabel {
+            get { return ResourceManager.GetString("ServerLoginDetails_UsernameLabel", resourceCulture); }
+        }
+
+        internal static string ServerLoginDetails_PasswordLabel {
+            get { return ResourceManager.GetString("ServerLoginDetails_PasswordLabel", resourceCulture); }
+        }
+
+        internal static string ServerLoginDetails_Description {
+            get { return ResourceManager.GetString("ServerLoginDetails_Description", resourceCulture); }
+        }
     }
 }

@@ -200,6 +200,16 @@ Be careful turning this off.
 </value></data>
   <data name="Settings_CopySavesButton" xml:space="preserve"><value>Copy Retail Saves to DSOS</value></data>
   <data name="Settings_LanguageLabel" xml:space="preserve"><value>Language:</value></data>
+  <!-- ServerLoginDetailsDialog 静态文本 -->
+  <data name="ServerLoginDetails_WindowTitle" xml:space="preserve"><value>Server Login Details</value></data>
+  <data name="ServerLoginDetails_OKButton" xml:space="preserve"><value>OK</value></data>
+  <data name="ServerLoginDetails_UsernameLabel" xml:space="preserve"><value>Username</value></data>
+  <data name="ServerLoginDetails_PasswordLabel" xml:space="preserve"><value>Password</value></data>
+  <data name="ServerLoginDetails_Description" xml:space="preserve"><value>Your server has been created and will show up in the server list shortly.
+
+You can configure your server at the following url using the login below.
+
+Please make sure you save the login! </value></data>
   <!-- CreateServerDialog 静态文本 -->
   <data name="CreateServer_WindowTitle" xml:space="preserve"><value>Create Server</value></data>
   <data name="CreateServer_SubmitButton" xml:space="preserve"><value>Create Server</value></data>
