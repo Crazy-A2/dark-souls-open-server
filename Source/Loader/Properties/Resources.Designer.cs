@@ -119,5 +119,193 @@ namespace Loader.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static string ColumnName_ServerName {
+            get { return ResourceManager.GetString("ColumnName_ServerName", resourceCulture); }
+        }
+
+        internal static string ColumnName_PlayerCount {
+            get { return ResourceManager.GetString("ColumnName_PlayerCount", resourceCulture); }
+        }
+
+        internal static string ColumnName_Description {
+            get { return ResourceManager.GetString("ColumnName_Description", resourceCulture); }
+        }
+
+        internal static string MainForm_ExeNotExist {
+            get { return ResourceManager.GetString("MainForm_ExeNotExist", resourceCulture); }
+        }
+
+        internal static string MainForm_ExeNotRecognised {
+            get { return ResourceManager.GetString("MainForm_ExeNotRecognised", resourceCulture); }
+        }
+
+        internal static string MainForm_RecognisedAs {
+            get { return ResourceManager.GetString("MainForm_RecognisedAs", resourceCulture); }
+        }
+
+        internal static string MainForm_NotLoggedInSteam {
+            get { return ResourceManager.GetString("MainForm_NotLoggedInSteam", resourceCulture); }
+        }
+
+        internal static string MainForm_Running {
+            get { return ResourceManager.GetString("MainForm_Running", resourceCulture); }
+        }
+
+        internal static string MainForm_LaunchGame {
+            get { return ResourceManager.GetString("MainForm_LaunchGame", resourceCulture); }
+        }
+
+        internal static string MainForm_NotAvailableManualImport {
+            get { return ResourceManager.GetString("MainForm_NotAvailableManualImport", resourceCulture); }
+        }
+
+        internal static string MainForm_FilterDS3 {
+            get { return ResourceManager.GetString("MainForm_FilterDS3", resourceCulture); }
+        }
+
+        internal static string MainForm_SelectDS3Exe {
+            get { return ResourceManager.GetString("MainForm_SelectDS3Exe", resourceCulture); }
+        }
+
+        internal static string MainForm_FilterDS2 {
+            get { return ResourceManager.GetString("MainForm_FilterDS2", resourceCulture); }
+        }
+
+        internal static string MainForm_SelectDS2Exe {
+            get { return ResourceManager.GetString("MainForm_SelectDS2Exe", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedGetKeys {
+            get { return ResourceManager.GetString("MainForm_FailedGetKeys", resourceCulture); }
+        }
+
+        internal static string MainForm_NoPublicKey {
+            get { return ResourceManager.GetString("MainForm_NoPublicKey", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedDetermineExe {
+            get { return ResourceManager.GetString("MainForm_FailedDetermineExe", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedLaunchExe {
+            get { return ResourceManager.GetString("MainForm_FailedLaunchExe", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedFindInjector {
+            get { return ResourceManager.GetString("MainForm_FailedFindInjector", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedGetKernel32 {
+            get { return ResourceManager.GetString("MainForm_FailedGetKernel32", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedGetLoadLibrary {
+            get { return ResourceManager.GetString("MainForm_FailedGetLoadLibrary", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedAllocMemory {
+            get { return ResourceManager.GetString("MainForm_FailedAllocMemory", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedWriteMemory {
+            get { return ResourceManager.GetString("MainForm_FailedWriteMemory", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedSpawnThread {
+            get { return ResourceManager.GetString("MainForm_FailedSpawnThread", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedEncodePatch {
+            get { return ResourceManager.GetString("MainForm_FailedEncodePatch", resourceCulture); }
+        }
+
+        internal static string MainForm_FailedWritePatchMayWork {
+            get { return ResourceManager.GetString("MainForm_FailedWritePatchMayWork", resourceCulture); }
+        }
+
+        internal static string MainForm_DS3ExeLocation {
+            get { return ResourceManager.GetString("MainForm_DS3ExeLocation", resourceCulture); }
+        }
+
+        internal static string MainForm_DS2ExeLocation {
+            get { return ResourceManager.GetString("MainForm_DS2ExeLocation", resourceCulture); }
+        }
+
+        internal static string Settings_OverwriteSavesConfirm {
+            get { return ResourceManager.GetString("Settings_OverwriteSavesConfirm", resourceCulture); }
+        }
+
+        internal static string Settings_CopiedSaves {
+            get { return ResourceManager.GetString("Settings_CopiedSaves", resourceCulture); }
+        }
+
+        internal static string CreateServer_Creating {
+            get { return ResourceManager.GetString("CreateServer_Creating", resourceCulture); }
+        }
+
+        internal static string CreateServer_NoShardingServers {
+            get { return ResourceManager.GetString("CreateServer_NoShardingServers", resourceCulture); }
+        }
+
+        internal static string CreateServer_Failed {
+            get { return ResourceManager.GetString("CreateServer_Failed", resourceCulture); }
+        }
+
+        internal static string Password_RetrievingKeys {
+            get { return ResourceManager.GetString("Password_RetrievingKeys", resourceCulture); }
+        }
+
+        internal static string Password_FailedGetKeys {
+            get { return ResourceManager.GetString("Password_FailedGetKeys", resourceCulture); }
+        }
+
+        internal static string MsgTitle_Error {
+            get { return ResourceManager.GetString("MsgTitle_Error", resourceCulture); }
+        }
+
+        internal static string MsgTitle_Warning {
+            get { return ResourceManager.GetString("MsgTitle_Warning", resourceCulture); }
+        }
+
+        internal static string MsgTitle_Info {
+            get { return ResourceManager.GetString("MsgTitle_Info", resourceCulture); }
+        }
+
+        internal static string MainForm_CreateNewServer {
+            get { return ResourceManager.GetString("MainForm_CreateNewServer", resourceCulture); }
+        }
+
+        internal static string MainForm_JoinDiscord {
+            get { return ResourceManager.GetString("MainForm_JoinDiscord", resourceCulture); }
+        }
+
+        internal static string MainForm_VisitGitHub {
+            get { return ResourceManager.GetString("MainForm_VisitGitHub", resourceCulture); }
+        }
+
+        internal static string MainForm_MinimumPlayers {
+            get { return ResourceManager.GetString("MainForm_MinimumPlayers", resourceCulture); }
+        }
+
+        internal static string MainForm_HidePassworded {
+            get { return ResourceManager.GetString("MainForm_HidePassworded", resourceCulture); }
+        }
+
+        internal static string MainForm_ServerIP {
+            get { return ResourceManager.GetString("MainForm_ServerIP", resourceCulture); }
+        }
+
+        internal static string MainForm_PrivateIP {
+            get { return ResourceManager.GetString("MainForm_PrivateIP", resourceCulture); }
+        }
+
+        internal static string MainForm_PublicIP {
+            get { return ResourceManager.GetString("MainForm_PublicIP", resourceCulture); }
+        }
+
+        internal static string MainForm_WindowTitle {
+            get { return ResourceManager.GetString("MainForm_WindowTitle", resourceCulture); }
+        }
     }
 }

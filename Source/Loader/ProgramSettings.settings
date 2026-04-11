@@ -23,5 +23,8 @@
     <Setting Name="ds3_exe_location" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ui_language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">auto</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

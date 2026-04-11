@@ -136,4 +136,59 @@
   <data name="magnifier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <!-- 运行时字符串资源 -->
+  <data name="ColumnName_ServerName" xml:space="preserve"><value>Server Name</value></data>
+  <data name="ColumnName_PlayerCount" xml:space="preserve"><value>Player Count</value></data>
+  <data name="ColumnName_Description" xml:space="preserve"><value>Description</value></data>
+  <data name="MainForm_ExeNotExist" xml:space="preserve"><value>Executable does not exist</value></data>
+  <data name="MainForm_ExeNotRecognised" xml:space="preserve"><value>Executable not a recognised version</value></data>
+  <data name="MainForm_RecognisedAs" xml:space="preserve"><value>Recognised as {0}</value></data>
+  <data name="MainForm_NotLoggedInSteam" xml:space="preserve"><value>Not Logged Into Steam</value></data>
+  <data name="MainForm_Running" xml:space="preserve"><value>Running ...</value></data>
+  <data name="MainForm_LaunchGame" xml:space="preserve"><value>Launch Game</value></data>
+  <data name="MainForm_NotAvailableManualImport" xml:space="preserve"><value>Not Available For Manual Import</value></data>
+  <data name="MainForm_FilterDS3" xml:space="preserve"><value>Dark Souls III|DarkSoulsIII.exe|All Files|*.*</value></data>
+  <data name="MainForm_SelectDS3Exe" xml:space="preserve"><value>Select DS3 Executable Location</value></data>
+  <data name="MainForm_FilterDS2" xml:space="preserve"><value>Dark Souls II|DarkSoulsII.exe|All Files|*.*</value></data>
+  <data name="MainForm_SelectDS2Exe" xml:space="preserve"><value>Select DS2 Executable Location</value></data>
+  <data name="MainForm_FailedGetKeys" xml:space="preserve"><value>Failed to retrieve the servers cryptographic keys.
+
+The master server may be down or the server may be missconfigured.</value></data>
+  <data name="MainForm_NoPublicKey" xml:space="preserve"><value>Unable to launch server, no public key is available.
+
+You shouldn't see this error unless someone has miss-configured the server configuration.</value></data>
+  <data name="MainForm_FailedDetermineExe" xml:space="preserve"><value>Failed to determine exe version, unable to patch.</value></data>
+  <data name="MainForm_FailedLaunchExe" xml:space="preserve"><value>Failed to launch data souls 3 executable.</value></data>
+  <data name="MainForm_FailedFindInjector" xml:space="preserve"><value>Failed to find Injector.dll, please reinstall: GetLastError={0}</value></data>
+  <data name="MainForm_FailedGetKernel32" xml:space="preserve"><value>Failed to get kernel32.dll module handle: GetLastError={0}</value></data>
+  <data name="MainForm_FailedGetLoadLibrary" xml:space="preserve"><value>Failed to get LoadLibraryA procedure address: GetLastError={0}</value></data>
+  <data name="MainForm_FailedAllocMemory" xml:space="preserve"><value>Failed to allocate memory in process: GetLastError={0}</value></data>
+  <data name="MainForm_FailedWriteMemory" xml:space="preserve"><value>Failed to write full patch to memory: GetLastError={0}</value></data>
+  <data name="MainForm_FailedSpawnThread" xml:space="preserve"><value>Failed to spawn remote thread: GetLastError={0}</value></data>
+  <data name="MainForm_FailedEncodePatch" xml:space="preserve"><value>Failed to encode server info patch. Potentially server information is too long to fit into the space available.</value></data>
+  <data name="MainForm_FailedWritePatchMayWork" xml:space="preserve"><value>Failed to write full patch to memory. Game may or may not work.</value></data>
+  <data name="MainForm_DS3ExeLocation" xml:space="preserve"><value>DarkSoulsIII.exe Location</value></data>
+  <data name="MainForm_DS2ExeLocation" xml:space="preserve"><value>DarkSoulsII.exe Location</value></data>
+  <data name="Settings_OverwriteSavesConfirm" xml:space="preserve"><value>This will overwrite any existing DSOS saves that exist, are you sure you wish to do this?</value></data>
+  <data name="Settings_CopiedSaves" xml:space="preserve"><value>Copied {0} retail saves to dsos.</value></data>
+  <data name="CreateServer_Creating" xml:space="preserve"><value>Creating Server ...</value></data>
+  <data name="CreateServer_NoShardingServers" xml:space="preserve"><value>No servers are online that support sharding for this game type. Please try again later.</value></data>
+  <data name="CreateServer_Failed" xml:space="preserve"><value>Failed to create server, try again later.</value></data>
+  <data name="Password_RetrievingKeys" xml:space="preserve"><value>Retrieving Keys ...</value></data>
+  <data name="Password_FailedGetKeys" xml:space="preserve"><value>Failed to retrieve the servers cryptographic keys.
+
+The password you supplied is likely incorrect.</value></data>
+  <data name="MsgTitle_Error" xml:space="preserve"><value>Error</value></data>
+  <data name="MsgTitle_Warning" xml:space="preserve"><value>Warning</value></data>
+  <data name="MsgTitle_Info" xml:space="preserve"><value>Info</value></data>
+  <!-- MainForm Designer 静态文本 -->
+  <data name="MainForm_CreateNewServer" xml:space="preserve"><value>Create New Server</value></data>
+  <data name="MainForm_JoinDiscord" xml:space="preserve"><value>Join Discord</value></data>
+  <data name="MainForm_VisitGitHub" xml:space="preserve"><value>Visit GitHub</value></data>
+  <data name="MainForm_MinimumPlayers" xml:space="preserve"><value>Minimum Players</value></data>
+  <data name="MainForm_HidePassworded" xml:space="preserve"><value>Hide Passworded</value></data>
+  <data name="MainForm_ServerIP" xml:space="preserve"><value>Server IP</value></data>
+  <data name="MainForm_PrivateIP" xml:space="preserve"><value>Private IP</value></data>
+  <data name="MainForm_PublicIP" xml:space="preserve"><value>Public IP</value></data>
+  <data name="MainForm_WindowTitle" xml:space="preserve"><value>Dark Souls - Open Server Loader</value></data>
 </root>

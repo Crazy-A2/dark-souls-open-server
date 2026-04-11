@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Loader.Properties;
 
 namespace Loader.Forms
 {
@@ -25,7 +26,7 @@ namespace Loader.Forms
         private void OnSubmit(object sender, EventArgs e)
         {
             submitButton.Enabled = false;
-            submitButton.Text = "Retrieving Keys ...";
+            submitButton.Text = Resources.Password_RetrievingKeys;
 
             string Password = passwordTextBox.Text;
 
@@ -42,7 +43,7 @@ namespace Loader.Forms
         {
             if (string.IsNullOrEmpty(Key))
             {
-                MessageBox.Show("Failed to retrieve the servers cryptographic keys.\n\nThe password you supplied is likely incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Password_FailedGetKeys, Resources.MsgTitle_Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Config.PublicKey = Key;
             GetPublicKeyTask = null;

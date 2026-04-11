@@ -32,6 +32,8 @@
         UseSeperateSavesCheckbox = new System.Windows.Forms.CheckBox();
         label1 = new System.Windows.Forms.Label();
         CopySavesButton = new System.Windows.Forms.Button();
+        LanguageLabel = new System.Windows.Forms.Label();
+        LanguageComboBox = new System.Windows.Forms.ComboBox();
         SuspendLayout();
         // 
         // UseSeperateSavesCheckbox
@@ -62,12 +64,33 @@
         CopySavesButton.Text = "Copy Retail Saves to DSOS";
         CopySavesButton.UseVisualStyleBackColor = true;
         CopySavesButton.Click += CopySavesClicked;
-        // 
+        //
+        // LanguageLabel
+        //
+        LanguageLabel.AutoSize = true;
+        LanguageLabel.Location = new System.Drawing.Point(26, 205);
+        LanguageLabel.Name = "LanguageLabel";
+        LanguageLabel.Size = new System.Drawing.Size(59, 15);
+        LanguageLabel.TabIndex = 3;
+        LanguageLabel.Text = "Language:";
+        //
+        // LanguageComboBox
+        //
+        LanguageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        LanguageComboBox.FormattingEnabled = true;
+        LanguageComboBox.Location = new System.Drawing.Point(91, 202);
+        LanguageComboBox.Name = "LanguageComboBox";
+        LanguageComboBox.Size = new System.Drawing.Size(200, 23);
+        LanguageComboBox.TabIndex = 4;
+        LanguageComboBox.SelectedIndexChanged += LanguageChanged;
+        //
         // SettingsForm
-        // 
+        //
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(528, 223);
+        ClientSize = new System.Drawing.Size(528, 245);
+        Controls.Add(LanguageComboBox);
+        Controls.Add(LanguageLabel);
         Controls.Add(CopySavesButton);
         Controls.Add(label1);
         Controls.Add(UseSeperateSavesCheckbox);
@@ -86,5 +109,7 @@
         private System.Windows.Forms.CheckBox UseSeperateSavesCheckbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button CopySavesButton;
+        private System.Windows.Forms.Label LanguageLabel;
+        private System.Windows.Forms.ComboBox LanguageComboBox;
     }
 }

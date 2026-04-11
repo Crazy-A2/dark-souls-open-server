@@ -9,6 +9,7 @@
 
 namespace Loader
 {
+    using Loader.Properties;
     partial class MainForm
     {
         /// <summary>
@@ -87,7 +88,7 @@ namespace Loader
         ImportButton.Name = "ImportButton";
         ImportButton.Size = new System.Drawing.Size(166, 35);
         ImportButton.TabIndex = 1;
-        ImportButton.Text = "Create New Server";
+        ImportButton.Text = Resources.MainForm_CreateNewServer;
         ImportButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         ImportButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
         ImportButton.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@ namespace Loader
         LaunchButton.Name = "LaunchButton";
         LaunchButton.Size = new System.Drawing.Size(174, 35);
         LaunchButton.TabIndex = 2;
-        LaunchButton.Text = "Launch Game";
+        LaunchButton.Text = Resources.MainForm_LaunchGame;
         LaunchButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         LaunchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
         LaunchButton.UseVisualStyleBackColor = true;
@@ -134,7 +135,7 @@ namespace Loader
         ExePathLabel.Name = "ExePathLabel";
         ExePathLabel.Size = new System.Drawing.Size(138, 15);
         ExePathLabel.TabIndex = 4;
-        ExePathLabel.Text = "DarkSoulsIII.exe Location";
+        ExePathLabel.Text = Resources.MainForm_DS3ExeLocation;
         // 
         // ExeLocationTextBox
         // 
@@ -182,17 +183,17 @@ namespace Loader
         // 
         // columnHeader1
         // 
-        columnHeader1.Text = "Server Name";
+        columnHeader1.Text = Resources.ColumnName_ServerName;
         columnHeader1.Width = 250;
         // 
         // columnHeader4
         // 
-        columnHeader4.Text = "Player Count";
+        columnHeader4.Text = Resources.ColumnName_PlayerCount;
         columnHeader4.Width = 100;
         // 
         // columnHeader2
         // 
-        columnHeader2.Text = "Description";
+        columnHeader2.Text = Resources.ColumnName_Description;
         columnHeader2.Width = 500;
         // 
         // BuildInfoLabel
@@ -240,7 +241,7 @@ namespace Loader
         DiscordLink.Size = new System.Drawing.Size(95, 21);
         DiscordLink.TabIndex = 13;
         DiscordLink.TabStop = true;
-        DiscordLink.Text = "Join Discord";
+        DiscordLink.Text = Resources.MainForm_JoinDiscord;
         DiscordLink.VisitedLinkColor = System.Drawing.Color.Gray;
         DiscordLink.LinkClicked += OnClickDiscordLink;
         // 
@@ -259,7 +260,7 @@ namespace Loader
         GithubLink.Size = new System.Drawing.Size(93, 21);
         GithubLink.TabIndex = 12;
         GithubLink.TabStop = true;
-        GithubLink.Text = "Visit GitHub";
+        GithubLink.Text = Resources.MainForm_VisitGitHub;
         GithubLink.VisitedLinkColor = System.Drawing.Color.Gray;
         GithubLink.LinkClicked += OnClickGithubLink;
         // 
@@ -296,7 +297,7 @@ namespace Loader
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(100, 15);
         label1.TabIndex = 13;
-        label1.Text = "Minimum Players";
+        label1.Text = Resources.MainForm_MinimumPlayers;
         // 
         // hidePasswordedBox
         // 
@@ -305,7 +306,7 @@ namespace Loader
         hidePasswordedBox.Name = "hidePasswordedBox";
         hidePasswordedBox.Size = new System.Drawing.Size(117, 19);
         hidePasswordedBox.TabIndex = 14;
-        hidePasswordedBox.Text = "Hide Passworded";
+        hidePasswordedBox.Text = Resources.MainForm_HidePassworded;
         hidePasswordedBox.UseVisualStyleBackColor = true;
         hidePasswordedBox.CheckedChanged += OnFilterPropertyChanged;
         // 
@@ -316,7 +317,7 @@ namespace Loader
         label3.Name = "label3";
         label3.Size = new System.Drawing.Size(61, 23);
         label3.TabIndex = 15;
-        label3.Text = "Server IP";
+        label3.Text = Resources.MainForm_ServerIP;
         label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
         // 
         // label4
@@ -326,7 +327,7 @@ namespace Loader
         label4.Name = "label4";
         label4.Size = new System.Drawing.Size(102, 15);
         label4.TabIndex = 17;
-        label4.Text = "Private IP";
+        label4.Text = Resources.MainForm_PrivateIP;
         label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
         // 
         // label5
@@ -336,7 +337,7 @@ namespace Loader
         label5.Name = "label5";
         label5.Size = new System.Drawing.Size(102, 15);
         label5.TabIndex = 19;
-        label5.Text = "Public IP";
+        label5.Text = Resources.MainForm_PublicIP;
         label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
         // 
         // privateIpBox
@@ -471,7 +472,7 @@ namespace Loader
         Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
         MinimumSize = new System.Drawing.Size(950, 490);
         Name = "MainForm";
-        Text = "Dark Souls - Open Server Loader";
+        Text = Resources.MainForm_WindowTitle;
         Load += OnLoaded;
         panel1.ResumeLayout(false);
         panel1.PerformLayout();

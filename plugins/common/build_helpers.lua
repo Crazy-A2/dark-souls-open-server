@@ -167,6 +167,21 @@ function organize_build_outputs(plat, dir)
 
     copy_matching_files(path.join(dir, "Loader*"), loaderdir)
     copy_matching_files(path.join(dir, "Injector*"), loaderdir)
+
+    -- 复制 Loader 的本地化 satellite assembly 目录（如 zh-CN/）
+    local culture_dirs = os.dirs(path.join(dir, "*"))
+    for _, culture_dir in ipairs(culture_dirs) do
+        local dirname = path.filename(culture_dir)
+        -- 跳过已处理的 Loader/Server 目录，只处理文化目录（如 zh-CN、en-US）
+        if dirname ~= "Loader" and dirname ~= "Server" then
+            local res_dll = os.files(path.join(culture_dir, "Loader.resources.dll"))
+            if #res_dll > 0 then
+                local target = ensure_outputdir(path.join(loaderdir, dirname))
+                os.cp(path.join(culture_dir, "Loader.resources.dll"), target)
+            end
+        end
+    end
+
     copy_matching_files(path.join(dir, "Server*"), serverdir)
     copy_runtime_assets(plat, serverdir)
     copy_lib_dynamic_libraries(plat, serverdir)

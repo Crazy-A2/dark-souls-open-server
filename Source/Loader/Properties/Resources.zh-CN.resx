@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnName_ServerName" xml:space="preserve"><value>服务器名称</value></data>
+  <data name="ColumnName_PlayerCount" xml:space="preserve"><value>玩家数量</value></data>
+  <data name="ColumnName_Description" xml:space="preserve"><value>描述</value></data>
+  <data name="MainForm_ExeNotExist" xml:space="preserve"><value>可执行文件不存在</value></data>
+  <data name="MainForm_ExeNotRecognised" xml:space="preserve"><value>无法识别的可执行文件版本</value></data>
+  <data name="MainForm_RecognisedAs" xml:space="preserve"><value>识别为 {0}</value></data>
+  <data name="MainForm_NotLoggedInSteam" xml:space="preserve"><value>未登录 Steam</value></data>
+  <data name="MainForm_Running" xml:space="preserve"><value>运行中 ...</value></data>
+  <data name="MainForm_LaunchGame" xml:space="preserve"><value>启动游戏</value></data>
+  <data name="MainForm_NotAvailableManualImport" xml:space="preserve"><value>手动导入不可用</value></data>
+  <data name="MainForm_FilterDS3" xml:space="preserve"><value>黑暗之魂III|DarkSoulsIII.exe|所有文件|*.*</value></data>
+  <data name="MainForm_SelectDS3Exe" xml:space="preserve"><value>选择黑暗之魂III可执行文件</value></data>
+  <data name="MainForm_FilterDS2" xml:space="preserve"><value>黑暗之魂II|DarkSoulsII.exe|所有文件|*.*</value></data>
+  <data name="MainForm_SelectDS2Exe" xml:space="preserve"><value>选择黑暗之魂II可执行文件</value></data>
+  <data name="MainForm_FailedGetKeys" xml:space="preserve"><value>无法获取服务器加密密钥。
+
+主服务器可能已下线或服务器配置有误。</value></data>
+  <data name="MainForm_NoPublicKey" xml:space="preserve"><value>无法启动服务器，没有可用的公钥。
+
+除非服务器配置有误，否则不应出现此错误。</value></data>
+  <data name="MainForm_FailedDetermineExe" xml:space="preserve"><value>无法确定可执行文件版本，无法进行补丁。</value></data>
+  <data name="MainForm_FailedLaunchExe" xml:space="preserve"><value>启动黑暗之魂可执行文件失败。</value></data>
+  <data name="MainForm_FailedFindInjector" xml:space="preserve"><value>找不到 Injector.dll，请重新安装：GetLastError={0}</value></data>
+  <data name="MainForm_FailedGetKernel32" xml:space="preserve"><value>获取 kernel32.dll 模块句柄失败：GetLastError={0}</value></data>
+  <data name="MainForm_FailedGetLoadLibrary" xml:space="preserve"><value>获取 LoadLibraryA 过程地址失败：GetLastError={0}</value></data>
+  <data name="MainForm_FailedAllocMemory" xml:space="preserve"><value>在进程中分配内存失败：GetLastError={0}</value></data>
+  <data name="MainForm_FailedWriteMemory" xml:space="preserve"><value>写入补丁到内存失败：GetLastError={0}</value></data>
+  <data name="MainForm_FailedSpawnThread" xml:space="preserve"><value>创建远程线程失败：GetLastError={0}</value></data>
+  <data name="MainForm_FailedEncodePatch" xml:space="preserve"><value>编码服务器信息补丁失败。可能是服务器信息过长，无法放入可用空间。</value></data>
+  <data name="MainForm_FailedWritePatchMayWork" xml:space="preserve"><value>写入补丁到内存失败。游戏可能正常也可能异常。</value></data>
+  <data name="MainForm_DS3ExeLocation" xml:space="preserve"><value>DarkSoulsIII.exe 位置</value></data>
+  <data name="MainForm_DS2ExeLocation" xml:space="preserve"><value>DarkSoulsII.exe 位置</value></data>
+  <data name="Settings_OverwriteSavesConfirm" xml:space="preserve"><value>这将覆盖所有现有的 DSOS 存档，确定要继续吗？</value></data>
+  <data name="Settings_CopiedSaves" xml:space="preserve"><value>已复制 {0} 个零售存档到 DSOS。</value></data>
+  <data name="CreateServer_Creating" xml:space="preserve"><value>正在创建服务器 ...</value></data>
+  <data name="CreateServer_NoShardingServers" xml:space="preserve"><value>没有支持此游戏类型分片的在线服务器，请稍后再试。</value></data>
+  <data name="CreateServer_Failed" xml:space="preserve"><value>创建服务器失败，请稍后再试。</value></data>
+  <data name="Password_RetrievingKeys" xml:space="preserve"><value>正在获取密钥 ...</value></data>
+  <data name="Password_FailedGetKeys" xml:space="preserve"><value>无法获取服务器加密密钥。
+
+您输入的密码可能不正确。</value></data>
+  <data name="MsgTitle_Error" xml:space="preserve"><value>错误</value></data>
+  <data name="MsgTitle_Warning" xml:space="preserve"><value>警告</value></data>
+  <data name="MsgTitle_Info" xml:space="preserve"><value>信息</value></data>
+  <!-- MainForm Designer 静态文本 -->
+  <data name="MainForm_CreateNewServer" xml:space="preserve"><value>创建新服务器</value></data>
+  <data name="MainForm_JoinDiscord" xml:space="preserve"><value>加入 Discord</value></data>
+  <data name="MainForm_VisitGitHub" xml:space="preserve"><value>访问 GitHub</value></data>
+  <data name="MainForm_MinimumPlayers" xml:space="preserve"><value>最少玩家数</value></data>
+  <data name="MainForm_HidePassworded" xml:space="preserve"><value>隐藏有密码的</value></data>
+  <data name="MainForm_ServerIP" xml:space="preserve"><value>服务器 IP</value></data>
+  <data name="MainForm_PrivateIP" xml:space="preserve"><value>内网 IP</value></data>
+  <data name="MainForm_PublicIP" xml:space="preserve"><value>公网 IP</value></data>
+  <data name="MainForm_WindowTitle" xml:space="preserve"><value>黑暗之魂 - 开放服务器启动器</value></data>
+</root>

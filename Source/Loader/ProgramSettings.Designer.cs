@@ -106,5 +106,17 @@ namespace Loader {
                 this["ds3_exe_location"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("auto")]
+        public string ui_language {
+            get {
+                return ((string)(this["ui_language"]));
+            }
+            set {
+                this["ui_language"] = value;
+            }
+        }
     }
 }
