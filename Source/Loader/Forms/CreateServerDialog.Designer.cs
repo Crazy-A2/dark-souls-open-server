@@ -1,4 +1,5 @@
-﻿
+﻿using Loader.Properties;
+
 namespace Loader.Forms
 {
     partial class CreateServerDialog
@@ -29,7 +30,6 @@ namespace Loader.Forms
         /// </summary>
         private void InitializeComponent()
         {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateServerDialog));
         usernameTextBox = new System.Windows.Forms.TextBox();
         label2 = new System.Windows.Forms.Label();
         submitButton = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@ namespace Loader.Forms
         label2.Name = "label2";
         label2.Size = new System.Drawing.Size(515, 90);
         label2.TabIndex = 2;
-        label2.Text = resources.GetString("label2.Text");
+        label2.Text = Resources.CreateServer_Description;
         // 
         // submitButton
         // 
@@ -63,7 +63,7 @@ namespace Loader.Forms
         submitButton.Name = "submitButton";
         submitButton.Size = new System.Drawing.Size(139, 28);
         submitButton.TabIndex = 3;
-        submitButton.Text = "Create Server";
+        submitButton.Text = Resources.CreateServer_SubmitButton;
         submitButton.UseVisualStyleBackColor = true;
         submitButton.Click += OnSubmit;
         // 
@@ -74,7 +74,7 @@ namespace Loader.Forms
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(74, 15);
         label1.TabIndex = 4;
-        label1.Text = "Server Name";
+        label1.Text = Resources.CreateServer_ServerNameLabel;
         // 
         // label3
         // 
@@ -83,7 +83,7 @@ namespace Loader.Forms
         label3.Name = "label3";
         label3.Size = new System.Drawing.Size(57, 15);
         label3.TabIndex = 6;
-        label3.Text = "Password";
+        label3.Text = Resources.CreateServer_PasswordLabel;
         // 
         // passwordTextBox
         // 
@@ -100,7 +100,7 @@ namespace Loader.Forms
         label4.Name = "label4";
         label4.Size = new System.Drawing.Size(455, 15);
         label4.TabIndex = 7;
-        label4.Text = "This will be displayed in the server list to identify the server. You can change this later.";
+        label4.Text = Resources.CreateServer_ServerNameHint;
         // 
         // label5
         // 
@@ -109,7 +109,7 @@ namespace Loader.Forms
         label5.Name = "label5";
         label5.Size = new System.Drawing.Size(314, 15);
         label5.TabIndex = 8;
-        label5.Text = "All users will need to enter this password to join the server.";
+        label5.Text = Resources.CreateServer_PasswordHint;
         // 
         // CreateServerDialog
         // 
@@ -131,7 +131,7 @@ namespace Loader.Forms
         ShowIcon = false;
         ShowInTaskbar = false;
         StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-        Text = "Create Server";
+        Text = Resources.CreateServer_WindowTitle;
         FormClosing += OnFormClosing;
         ResumeLayout(false);
         PerformLayout();

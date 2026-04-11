@@ -91,7 +91,7 @@
   <data name="MainForm_DS3ExeLocation" xml:space="preserve"><value>DarkSoulsIII.exe 位置</value></data>
   <data name="MainForm_DS2ExeLocation" xml:space="preserve"><value>DarkSoulsII.exe 位置</value></data>
   <data name="Settings_OverwriteSavesConfirm" xml:space="preserve"><value>这将覆盖所有现有的 DSOS 存档，确定要继续吗？</value></data>
-  <data name="Settings_CopiedSaves" xml:space="preserve"><value>已复制 {0} 个零售存档到 DSOS。</value></data>
+  <data name="Settings_CopiedSaves" xml:space="preserve"><value>已复制 {0} 个官方存档到 DSOS。</value></data>
   <data name="CreateServer_Creating" xml:space="preserve"><value>正在创建服务器 ...</value></data>
   <data name="CreateServer_NoShardingServers" xml:space="preserve"><value>没有支持此游戏类型分片的在线服务器，请稍后再试。</value></data>
   <data name="CreateServer_Failed" xml:space="preserve"><value>创建服务器失败，请稍后再试。</value></data>
@@ -112,4 +112,26 @@
   <data name="MainForm_PrivateIP" xml:space="preserve"><value>内网 IP</value></data>
   <data name="MainForm_PublicIP" xml:space="preserve"><value>公网 IP</value></data>
   <data name="MainForm_WindowTitle" xml:space="preserve"><value>黑暗之魂 - 开放服务器启动器</value></data>
+  <!-- SettingsForm 静态文本 -->
+  <data name="Settings_WindowTitle" xml:space="preserve"><value>设置</value></data>
+  <data name="Settings_UseSeperateSaves" xml:space="preserve"><value>使用独立存档文件？</value></data>
+  <data name="Settings_SeparateSavesDescription" xml:space="preserve"><value>此选项使游戏使用与连接官方服务器时不同的独立存档文件。这是一层额外保护，防止您在 DSOS 服务器上的行为被判定为作弊而导致官方服务器账号被封禁。
+
+请谨慎关闭此选项。
+</value></data>
+  <data name="Settings_CopySavesButton" xml:space="preserve"><value>复制官方存档到 DSOS</value></data>
+  <data name="Settings_LanguageLabel" xml:space="preserve"><value>语言：</value></data>
+  <!-- CreateServerDialog 静态文本 -->
+  <data name="CreateServer_WindowTitle" xml:space="preserve"><value>创建服务器</value></data>
+  <data name="CreateServer_SubmitButton" xml:space="preserve"><value>创建服务器</value></data>
+  <data name="CreateServer_ServerNameLabel" xml:space="preserve"><value>服务器名称</value></data>
+  <data name="CreateServer_PasswordLabel" xml:space="preserve"><value>密码</value></data>
+  <data name="CreateServer_ServerNameHint" xml:space="preserve"><value>此名称将显示在服务器列表中用于识别服务器，您可以稍后修改。</value></data>
+  <data name="CreateServer_PasswordHint" xml:space="preserve"><value>所有用户需要输入此密码才能加入服务器。</value></data>
+  <data name="CreateServer_Description" xml:space="preserve"><value>提交后，系统将选择一台支持分片的服务器并在其上创建服务器。
+服务器创建完成后，您可以进一步配置。
+
+超过约一小时无活动的服务器将被移除。
+
+请勿滥用此功能，如果您预计流量较高，请手动搭建自己的服务器。</value></data>
 </root>

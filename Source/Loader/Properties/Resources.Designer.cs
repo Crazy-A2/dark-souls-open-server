@@ -307,5 +307,53 @@ namespace Loader.Properties {
         internal static string MainForm_WindowTitle {
             get { return ResourceManager.GetString("MainForm_WindowTitle", resourceCulture); }
         }
+
+        internal static string Settings_WindowTitle {
+            get { return ResourceManager.GetString("Settings_WindowTitle", resourceCulture); }
+        }
+
+        internal static string Settings_UseSeperateSaves {
+            get { return ResourceManager.GetString("Settings_UseSeperateSaves", resourceCulture); }
+        }
+
+        internal static string Settings_SeparateSavesDescription {
+            get { return ResourceManager.GetString("Settings_SeparateSavesDescription", resourceCulture); }
+        }
+
+        internal static string Settings_CopySavesButton {
+            get { return ResourceManager.GetString("Settings_CopySavesButton", resourceCulture); }
+        }
+
+        internal static string Settings_LanguageLabel {
+            get { return ResourceManager.GetString("Settings_LanguageLabel", resourceCulture); }
+        }
+
+        internal static string CreateServer_WindowTitle {
+            get { return ResourceManager.GetString("CreateServer_WindowTitle", resourceCulture); }
+        }
+
+        internal static string CreateServer_SubmitButton {
+            get { return ResourceManager.GetString("CreateServer_SubmitButton", resourceCulture); }
+        }
+
+        internal static string CreateServer_ServerNameLabel {
+            get { return ResourceManager.GetString("CreateServer_ServerNameLabel", resourceCulture); }
+        }
+
+        internal static string CreateServer_PasswordLabel {
+            get { return ResourceManager.GetString("CreateServer_PasswordLabel", resourceCulture); }
+        }
+
+        internal static string CreateServer_ServerNameHint {
+            get { return ResourceManager.GetString("CreateServer_ServerNameHint", resourceCulture); }
+        }
+
+        internal static string CreateServer_PasswordHint {
+            get { return ResourceManager.GetString("CreateServer_PasswordHint", resourceCulture); }
+        }
+
+        internal static string CreateServer_Description {
+            get { return ResourceManager.GetString("CreateServer_Description", resourceCulture); }
+        }
     }
 }

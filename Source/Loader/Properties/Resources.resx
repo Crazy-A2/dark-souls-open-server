@@ -191,4 +191,26 @@ The password you supplied is likely incorrect.</value></data>
   <data name="MainForm_PrivateIP" xml:space="preserve"><value>Private IP</value></data>
   <data name="MainForm_PublicIP" xml:space="preserve"><value>Public IP</value></data>
   <data name="MainForm_WindowTitle" xml:space="preserve"><value>Dark Souls - Open Server Loader</value></data>
+  <!-- SettingsForm 静态文本 -->
+  <data name="Settings_WindowTitle" xml:space="preserve"><value>Settings</value></data>
+  <data name="Settings_UseSeperateSaves" xml:space="preserve"><value>Use seperate save files?</value></data>
+  <data name="Settings_SeparateSavesDescription" xml:space="preserve"><value>This makes the game uses a seperate set of save files from those you use when connecting to the retail server. This is an added layer of protection to prevent your account being banned on the retail servers if you do anything on dsos servers that would flag you as cheating.
+
+Be careful turning this off.
+</value></data>
+  <data name="Settings_CopySavesButton" xml:space="preserve"><value>Copy Retail Saves to DSOS</value></data>
+  <data name="Settings_LanguageLabel" xml:space="preserve"><value>Language:</value></data>
+  <!-- CreateServerDialog 静态文本 -->
+  <data name="CreateServer_WindowTitle" xml:space="preserve"><value>Create Server</value></data>
+  <data name="CreateServer_SubmitButton" xml:space="preserve"><value>Create Server</value></data>
+  <data name="CreateServer_ServerNameLabel" xml:space="preserve"><value>Server Name</value></data>
+  <data name="CreateServer_PasswordLabel" xml:space="preserve"><value>Password</value></data>
+  <data name="CreateServer_ServerNameHint" xml:space="preserve"><value>This will be displayed in the server list to identify the server. You can change this later.</value></data>
+  <data name="CreateServer_PasswordHint" xml:space="preserve"><value>All users will need to enter this password to join the server.</value></data>
+  <data name="CreateServer_Description" xml:space="preserve"><value>On submitting a server that supports sharding will be selected and a server created on it.
+After the server has been created you will be able to configure it further.
+
+Servers that are inactive for more than around an hour will be removed.
+
+Please do not abuse this, if you are expecting high traffic please setup your own server manually.</value></data>
 </root>

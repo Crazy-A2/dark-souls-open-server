@@ -1,4 +1,6 @@
-﻿namespace Loader
+﻿using Loader.Properties;
+
+namespace Loader
 {
     partial class SettingsForm
     {
@@ -28,7 +30,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
         UseSeperateSavesCheckbox = new System.Windows.Forms.CheckBox();
         label1 = new System.Windows.Forms.Label();
         CopySavesButton = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
         UseSeperateSavesCheckbox.Name = "UseSeperateSavesCheckbox";
         UseSeperateSavesCheckbox.Size = new System.Drawing.Size(147, 19);
         UseSeperateSavesCheckbox.TabIndex = 0;
-        UseSeperateSavesCheckbox.Text = "Use seperate save files?";
+        UseSeperateSavesCheckbox.Text = Resources.Settings_UseSeperateSaves;
         UseSeperateSavesCheckbox.UseVisualStyleBackColor = true;
         UseSeperateSavesCheckbox.CheckedChanged += SettingChanged;
         // 
@@ -53,7 +54,7 @@
         label1.Name = "label1";
         label1.Size = new System.Drawing.Size(448, 97);
         label1.TabIndex = 1;
-        label1.Text = resources.GetString("label1.Text");
+        label1.Text = Resources.Settings_SeparateSavesDescription;
         // 
         // CopySavesButton
         // 
@@ -61,7 +62,7 @@
         CopySavesButton.Name = "CopySavesButton";
         CopySavesButton.Size = new System.Drawing.Size(173, 40);
         CopySavesButton.TabIndex = 2;
-        CopySavesButton.Text = "Copy Retail Saves to DSOS";
+        CopySavesButton.Text = Resources.Settings_CopySavesButton;
         CopySavesButton.UseVisualStyleBackColor = true;
         CopySavesButton.Click += CopySavesClicked;
         //
@@ -72,7 +73,7 @@
         LanguageLabel.Name = "LanguageLabel";
         LanguageLabel.Size = new System.Drawing.Size(59, 15);
         LanguageLabel.TabIndex = 3;
-        LanguageLabel.Text = "Language:";
+        LanguageLabel.Text = Resources.Settings_LanguageLabel;
         //
         // LanguageComboBox
         //
@@ -98,7 +99,7 @@
         Name = "SettingsForm";
         ShowInTaskbar = false;
         StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-        Text = "Settings";
+        Text = Resources.Settings_WindowTitle;
         Load += OnLoad;
         ResumeLayout(false);
         PerformLayout();
