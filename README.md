@@ -4,13 +4,28 @@
 
 English version: [README-en.md](README-en.md)
 
-# DS3OS 是什么？
-DS3OS 是《黑暗之魂 3》以及《黑暗之魂 2：原罪学者（SOTFS）》服务器的开源实现。
+# DSOS 是什么？
+DSOS 是《黑暗之魂 3》以及《黑暗之魂 2：原罪学者（SOTFS）》服务器的开源实现。
 
 这个项目主要用于提供一个相对独立的联机环境，方便玩家在使用模组时降低被封禁的风险，或与朋友私下联机，避免作弊者、入侵等公开联机环境中的问题。
 
 如果你在使用过程中遇到问题，可以加入 Discord 寻求技术支持：
 https://discord.gg/pBmquc9Jkj
+
+# 组件总览
+当前仓库主要由以下几个部分组成：
+
+- `Loader`：Windows 图形启动器，用于拉取服务器列表、启动游戏并连接到自定义服务器
+- `Injector`：仅在 Windows 下构建的注入模块，用于把游戏连接目标切换到 DS3OS 服务器
+- `Server`：主服务器程序，负责登录、认证、游戏逻辑以及 WebUI 服务
+- `MasterServer`：用于发布和列出活动服务器的 Node.js API 服务
+- `WebUI`：随服务器一起分发的管理页面静态资源
+
+如果你是第一次接触这个仓库，可以把它理解为：
+
+1. 玩家通常使用 `Loader` 加入服务器
+2. 服主通常运行 `Server.exe` 自建服务器
+3. 维护分叉或公共服务器列表时，才会额外接触 `MasterServer`
 
 # 能用于盗版游戏吗？
 不能。
@@ -19,25 +34,46 @@ https://discord.gg/pBmquc9Jkj
 
 如果条件允许，也请支持 FROM SOFTWARE 的作品。
 
-# 在哪里下载？
-发行版下载地址：
-https://github.com/TLeonardUK/ds3os/releases
-
 # 怎么使用？
-构建完成后，通常会得到一个 `bin/` 目录，其中最常用的是 `Loader/` 和 `Server/` 两部分。
+构建完成后，默认会得到一个按平台、架构和模式划分的输出目录，例如：
+
+- `bin/x64_release/`
+- `bin/x64_debug/`
+- `bin/x86_release/`
+
+在常见的 Windows x64 构建流程下，`xmake build-server` 和 `xmake build-all` 还会进一步整理出：
+
+- `bin/<arch>_<mode>/Loader/`
+- `bin/<arch>_<mode>/Server/`
+
+其中最常用的是 `Loader/` 和 `Server/` 两部分。
 
 - `Loader`：用于启动游戏并连接到自定义服务器
 - `Server`：用于启动你自己的专用服务器
 
-运行 Loader 后，你可以选择创建服务器或加入已有服务器。
+## 玩家快速开始
+1. 先准备好 `Loader` 目录中的启动器。
+2. 以管理员身份运行 Loader。
+3. 在 Loader 中选择要启动的游戏，刷新服务器列表后加入目标服务器。
+4. 如果服务器开启了密码保护，先输入密码再连接。
 
-如果你想自己开服，需要运行 `Server` 目录中的 `Server.exe`。它会在你的电脑上启动 DS3OS 自定义服务器。
-
-服务器首次启动时，会生成配置文件 `Saved/default/config.json`。你可以修改其中的匹配参数，并通过重启服务器使配置生效。
+## 服主快速开始
+1. 运行 `Server` 目录中的 `Server.exe`。
+2. 首次启动时，程序会生成 `Saved/default/config.json`。
+3. 修改配置后重启服务器使其生效。
+4. 如需公开给外网玩家访问，请同时检查端口转发、防火墙以及公网 / 局域网地址设置。
 
 如果你希望服务器启用密码保护，可以在 `Saved/default/config.json` 中设置密码。之后，玩家连接该服务器时需要先输入密码。
 
 **注意：** 运行 `Server.exe` 时，本机必须安装 **Steam 客户端**（无需登录）。否则 `Server.exe` 可能无法正常初始化。
+
+## 开发者快速开始
+如果你只是想快速构建并运行本 fork，建议优先走根目录 `xmake.lua` 对应的 XMake 流程，而不是旧的 CMake / CI 说明。常见入口是：
+
+- `xmake build-loader`：只构建 Windows x64 Loader
+- `xmake build-server`：构建 Server，并在 Windows x64 下额外构建 Injector 和 Loader
+- `xmake build-all`：调用 `build-server` 后再复制运行时资源
+- `xmake install-all`：只复制运行时资源，不执行完整构建
 
 # 当前支持情况
 目前，大部分核心功能已经可以工作，但与官方服务器相比，行为上仍可能存在差异。项目仍在持续改进，目标是进一步贴近官方服务端表现，并提升非官方服务器的整体可用性。
@@ -126,119 +162,131 @@ DSOS 使用自己的独立存档，以避免影响正式版存档。
 
 ## 配置文件中的字段分别是什么意思？
 配置项说明目前主要在源码中维护，参考：
-https://github.com/TLeonardUK/ds3os/blob/main/Source/Server/Config/RuntimeConfig.h
+https://github.com/Crazy-A2/ds3os/blob/main/Source/Server/Config/RuntimeConfig.h
+
+常用字段速查：
+
+| 字段 | 说明 |
+| --- | --- |
+| `GameType` | 服务器类型，`DarkSouls3` 或 `DarkSouls2` |
+| `ServerHostname` | 公网 IP，外网玩家通过此地址连接 |
+| `ServerPrivateHostname` | 局域网 IP，局域网玩家通过此地址连接 |
+| `Password` | 服务器密码，留空则不需要密码 |
+| `Advertise` | 是否向 MasterServer 公开此服务器 |
+| `ServerName` | 服务器显示名称 |
+| `Announcement` | 玩家进入时显示的公告文本 |
 
 # 如何构建？
-本 fork 当前以 **Windows + XMake** 为主，不再沿用原项目中的 CMake 工作流。
-
-如果你只是想快速构建并运行，推荐直接使用下面这套方式。
+本 fork 当前以 **Windows + XMake** 为主，构建入口是根目录的 `xmake.lua`。
 
 ## 环境要求
-- Visual Studio 2026 或更高版本
+- Visual Studio（含 MSVC 工具链）
 - Windows SDK
-- .NET 10 SDK（用于构建 Loader）
+- .NET 10 SDK（仅构建 Loader 时需要）
 - XMake
 
-## 快速开始
-### 1. 安装 XMake
-可以参考 XMake 官方文档，或自行通过常用包管理器安装。
+## 构建步骤
 
-### 2. 配置构建
-首次构建建议先执行：
+### 1. 配置构建环境
+首次构建前执行一次：
 
 ```bash
 xmake config --plat=windows --arch=x64 --mode=release --toolchain=msvc
 ```
 
-### 3. 构建项目
-常用命令如下：
-
+### 2. 一键构建（推荐）
 ```bash
-# 构建 Loader
-xmake build-loader
-
-# 构建主服务器
-xmake build Server
-
-# 构建注入器
-xmake build Injector
-
-# 一键构建 Server、Injector、Loader，并整理输出目录
 xmake build-all
 ```
 
-### 4. 复制运行时文件
-如果你需要整理运行时所需文件，可以执行：
+这条命令会依次完成：配置 MSVC 环境 → 构建 Server → 构建 Injector → 构建 Loader → 整理输出目录 → 复制运行时资源。
+
+### 3. 分步构建
+如果只需要构建某个部分：
+
+```bash
+# 只构建服务器（Windows x64 下同时构建 Injector 和 Loader）
+xmake build-server
+
+# 只构建 Loader（仅支持 Windows x64）
+xmake build-loader
+
+# 只构建 Server 可执行文件
+xmake build Server
+
+# 只构建 Injector DLL
+xmake build Injector
+```
+
+### 4. 复制运行时资源
+如果只需要把 WebUI、Steam 运行库等资源复制到输出目录，而不重新编译：
 
 ```bash
 xmake install-all
 ```
 
-## 常见构建方式
-### Debug 构建
-```bash
-xmake config --plat=windows --arch=x64 --mode=debug --toolchain=msvc
-xmake build Server
-```
+## 常用 XMake 任务说明
 
-### Release 构建
-```bash
-xmake config --plat=windows --arch=x64 --mode=release --toolchain=msvc
-xmake build Server
-```
-
-### 32 位构建
-```bash
-xmake config --plat=windows --arch=x86 --mode=release --toolchain=msvc
-xmake build Server
-```
-
-## 常用 XMake 任务
-| 命令 | 说明 |
+| 命令 | 实际行为 |
 | --- | --- |
-| `xmake build-loader` | 构建 C# Loader |
-| `xmake build-all` | 构建 Server、Injector、Loader，并整理输出 |
-| `xmake build-server` | 构建 Server，并在 x64 下额外构建 Injector、Loader |
-| `xmake install-all` | 复制运行时文件 |
-| `xmake clean-bin-libs` | 清理 `bin/` 下生成的 `.lib` / `.pdb` 文件 |
+| `xmake build-all` | 调用 `build-server`，再调用 `install-all` |
+| `xmake build-server` | 构建 Server；Windows x64 下额外构建 Injector 和 Loader，并整理输出目录 |
+| `xmake build-loader` | 仅限 Windows x64；构建 Injector 和 Loader |
+| `xmake install-all` | 复制 `Source/WebUI`、Steam 运行库、`lib/` 下动态库到输出目录 |
+| `xmake clean-bin-libs` | 清理 `bin/` 下的 `.lib` / `.pdb` 文件 |
 
-## 输出目录
-默认输出目录类似如下：
+## 输出目录结构
+构建产物默认输出到 `bin/<arch>_<mode>/`，例如：
 
-- `bin/x64_debug/`
-- `bin/x64_release/`
-- `bin/x86_debug/`
-- `bin/x86_release/`
+```
+bin/
+├── x64_release/
+│   ├── Server/        ← Server.exe、WebUI、steam_api64.dll 等
+│   └── Loader/        ← Loader.exe、Injector.dll 等
+├── x64_debug/
+└── x86_release/
+```
 
-其中 `xmake build-server` 和 `xmake build-all` 还会进一步整理出：
+`Server/` 目录下还会包含 `Source/WebUI` 的静态资源，Server 启动后直接从这里提供 WebUI 服务。
 
-- `bin/<arch>_<mode>/Server/`
-- `bin/<arch>_<mode>/Loader/`
+## OpenSSL 说明
+默认使用预编译的 OpenSSL 库（从 `lib/` 目录链接）。如果需要从源码编译 OpenSSL，可以加上选项：
 
-## 构建补充说明
-- `Server`、`Injector`、`Loader` 是最主要的三个构建目标
-- `Loader` 依赖 .NET SDK
-- 当前仓库根目录以 `xmake.lua` 为核心构建入口
+```bash
+xmake config ... --bundled_openssl=y
+```
 
-## nix
-原项目 README 中保留了 nix 相关说明，但当前这个 fork 的主要维护方向不是 nix 工作流。若你使用本 fork，优先参考上面的 XMake 构建方式。
+## MasterServer（可选）
+MasterServer 是独立的 Node.js 服务，只有在你需要维护自己的服务器列表时才需要运行。
+
+```bash
+cd Source/MasterServer
+npm install
+npm run start        # 生产模式
+npm run start:dev    # 开发模式（nodemon 自动重启）
+```
+
+也可以使用 Docker 镜像（见下方 Docker 说明）。
 
 # 仓库结构
 ```text
 /
+├── xmake.lua              构建入口，定义所有 C++ 编译目标
+├── plugins/               XMake 自定义任务（build-all、build-server 等）
 ├── Protobuf/              服务器网络通信使用的 protobuf 定义
 ├── Resources/             构建与打包所需的通用资源，例如图标、说明文档等
 ├── Source/                项目全部源代码
-│   ├── Injector/          注入到游戏中的 DLL，用于提供 DS3OS 功能
-│   ├── Loader/            用于启动游戏并连接自定义服务器的 WinForms 程序
-│   ├── MasterServer/      用于发布和列出活动服务器的 Node.js API 服务
-│   ├── Server/            主服务器源码
-│   ├── Server.DarkSouls3/ 《黑暗之魂 3》相关服务器实现
-│   ├── Server.DarkSouls2/ 《黑暗之魂 2》相关服务器实现
-│   ├── Shared/            服务器与注入器共享代码
-│   ├── ThirdParty/        第三方库源码
-│   └── WebUI/             服务器管理页面使用的静态资源
-├── Tools/                 分析脚本、批处理、辅助工具等
+│   ├── Injector/          注入到游戏中的 DLL（仅 Windows），用于重定向联机目标
+│   ├── Loader/            WinForms 启动器（仅 Windows x64，.NET 10）
+│   ├── MasterServer/      服务器注册中心，Node.js API 服务
+│   ├── Server/            主服务器框架（登录、认证、游戏逻辑、WebUI）
+│   ├── Server.DarkSouls3/ 《黑暗之魂 3》具体业务实现
+│   ├── Server.DarkSouls2/ 《黑暗之魂 2》具体业务实现（实验性）
+│   ├── Shared/            服务器与注入器共享的核心库
+│   ├── ThirdParty/        第三方库源码（openssl、curl、sqlite、protobuf 等）
+│   └── WebUI/             服务器管理页面静态资源，构建后随 Server 一起分发
+├── Tools/                 辅助脚本（生成 VS 工程、protobuf、打包等）
+└── lib/                   预编译的 OpenSSL 库（默认链接方式）
 ```
 
 # 如何参与贡献？
