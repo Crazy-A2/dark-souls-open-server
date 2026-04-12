@@ -1,9 +1,6 @@
 ![Dark Souls 3 - Open Server](./Resources/banner.png?raw=true)
 
 ![GitHub license](https://img.shields.io/github/license/TLeonardUK/ds3os)
-![GitHub release](https://img.shields.io/github/release/TLeonardUK/ds3os)
-![GitHub downloads](https://img.shields.io/github/downloads/TLeonardUK/ds3os/total)
-[![Discord](https://img.shields.io/discord/937318023495303188?label=Discord)](https://discord.gg/pBmquc9Jkj)
 
 English version: [README-en.md](README-en.md)
 
